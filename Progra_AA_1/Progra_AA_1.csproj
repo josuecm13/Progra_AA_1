@@ -45,6 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneticAlgorithm\Distance\AbsDistance.cs" />
+    <Compile Include="GeneticAlgorithm\Distance\LBP.cs" />
+    <Compile Include="GeneticAlgorithm\Distance\Manhattan.cs" />
+    <Compile Include="GeneticAlgorithm\GenAlgorithm.cs" />
+    <Compile Include="GeneticAlgorithm\Imagen.cs" />
     <Compile Include="Views\Image Form\ImageViewer.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.originalPictureBox = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.randomPicBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtbox_console = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.originalPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.randomPicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // originalPictureBox
@@ -44,13 +44,13 @@
             this.originalPictureBox.TabIndex = 0;
             this.originalPictureBox.TabStop = false;
             // 
-            // pictureBox2
+            // randomPicBox
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(526, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(442, 385);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.randomPicBox.Location = new System.Drawing.Point(526, 12);
+            this.randomPicBox.Name = "randomPicBox";
+            this.randomPicBox.Size = new System.Drawing.Size(442, 385);
+            this.randomPicBox.TabIndex = 1;
+            this.randomPicBox.TabStop = false;
             // 
             // label1
             // 
@@ -76,12 +76,12 @@
             this.ClientSize = new System.Drawing.Size(980, 523);
             this.Controls.Add(this.txtbox_console);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.randomPicBox);
             this.Controls.Add(this.originalPictureBox);
             this.Name = "ImageViewer";
             this.Text = "ImageViewer";
             ((System.ComponentModel.ISupportInitialize)(this.originalPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.randomPicBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -90,7 +90,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox originalPictureBox;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox randomPicBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox txtbox_console;
     }
