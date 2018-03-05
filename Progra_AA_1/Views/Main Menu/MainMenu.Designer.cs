@@ -1,6 +1,6 @@
 ﻿namespace Progra_AA_1
 {
-    partial class Form1
+    partial class MainMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -36,9 +36,9 @@
             this.lbl_Pob = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_poblacion = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.probaCruce = new System.Windows.Forms.ComboBox();
+            this.probaMuta = new System.Windows.Forms.ComboBox();
+            this.txt_gens = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.imageSelecter = new System.Windows.Forms.Button();
@@ -75,6 +75,7 @@
             this.btn_Propio.TabStop = true;
             this.btn_Propio.Text = "Método Darwin-Wallas";
             this.btn_Propio.UseVisualStyleBackColor = true;
+            this.btn_Propio.CheckedChanged += new System.EventHandler(this.btn_Propio_CheckedChanged);
             // 
             // lbl_mutacion
             // 
@@ -120,10 +121,10 @@
             this.txt_poblacion.TabIndex = 8;
             this.txt_poblacion.Text = "40";
             // 
-            // comboBox1
+            // probaCruce
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.probaCruce.FormattingEnabled = true;
+            this.probaCruce.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -225,17 +226,17 @@
             "98",
             "99",
             "100"});
-            this.comboBox1.Location = new System.Drawing.Point(240, 117);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 24);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.Text = "20";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.probaCruce.Location = new System.Drawing.Point(240, 117);
+            this.probaCruce.Name = "probaCruce";
+            this.probaCruce.Size = new System.Drawing.Size(100, 24);
+            this.probaCruce.TabIndex = 9;
+            this.probaCruce.Text = "20";
+            this.probaCruce.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // comboBox2
+            // probaMuta
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.probaMuta.FormattingEnabled = true;
+            this.probaMuta.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -337,19 +338,19 @@
             "98",
             "99",
             "100"});
-            this.comboBox2.Location = new System.Drawing.Point(240, 153);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 24);
-            this.comboBox2.TabIndex = 10;
-            this.comboBox2.Text = "29";
+            this.probaMuta.Location = new System.Drawing.Point(240, 153);
+            this.probaMuta.Name = "probaMuta";
+            this.probaMuta.Size = new System.Drawing.Size(100, 24);
+            this.probaMuta.TabIndex = 10;
+            this.probaMuta.Text = "29";
             // 
-            // textBox2
+            // txt_gens
             // 
-            this.textBox2.Location = new System.Drawing.Point(240, 185);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 11;
-            this.textBox2.Text = "100";
+            this.txt_gens.Location = new System.Drawing.Point(240, 185);
+            this.txt_gens.Name = "txt_gens";
+            this.txt_gens.Size = new System.Drawing.Size(100, 22);
+            this.txt_gens.TabIndex = 11;
+            this.txt_gens.Text = "100";
             // 
             // button1
             // 
@@ -385,9 +386,9 @@
             this.ClientSize = new System.Drawing.Size(742, 392);
             this.Controls.Add(this.imageSelecter);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txt_gens);
+            this.Controls.Add(this.probaMuta);
+            this.Controls.Add(this.probaCruce);
             this.Controls.Add(this.txt_poblacion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_Pob);
@@ -413,9 +414,9 @@
         private System.Windows.Forms.Label lbl_Pob;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_poblacion;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.ComboBox probaCruce;
+        private System.Windows.Forms.ComboBox probaMuta;
+        private System.Windows.Forms.TextBox txt_gens;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button imageSelecter;

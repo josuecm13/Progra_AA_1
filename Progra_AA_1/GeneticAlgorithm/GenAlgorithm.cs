@@ -10,10 +10,11 @@ namespace Progra_AA_1.GeneticAlgorithm
     class GenAlgorithm
     {
         public Bitmap destino;
+        int probCrossOver, probMutation, generations, prob;
 
-        GenAlgorithm()
+        public GenAlgorithm(int n, Bitmap bitmap, int distanceType, int probCrossOver, int probMutation, int generations)
         {
-
+            ImageManager manager = new ImageManager(n,destino,distanceType);
         }
 
     }

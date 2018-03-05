@@ -11,12 +11,13 @@ using System.Windows.Forms;
 
 namespace Progra_AA_1
 {
-    public partial class Form1 : Form
+    public partial class MainMenu : Form
     {
 
         string path;
+        int distanceOption;
 
-        public Form1()
+        public MainMenu()
         {
             InitializeComponent();
             button1.Enabled = false;
@@ -34,7 +35,7 @@ namespace Progra_AA_1
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
-
+            distanceOption = 0;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -63,6 +64,11 @@ namespace Progra_AA_1
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
             
+        }
+
+        private void btn_Propio_CheckedChanged(object sender, EventArgs e)
+        {
+            distanceOption = 1;
         }
     }
 }
