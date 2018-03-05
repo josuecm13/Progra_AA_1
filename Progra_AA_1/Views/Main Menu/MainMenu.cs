@@ -47,6 +47,8 @@ namespace Progra_AA_1
         {
             ImageViewer form = new ImageViewer();
             form.SetDesireImage(path);
+            form.SetComponents(Int32.Parse(txt_population.Text), Int32.Parse(txt_gens.Text), Int32.Parse(txt_prpMut.Text), Int32.Parse(txt_prbCross.Text),0,new Bitmap(path));
+            form.Run();
             form.Show();
         }
 

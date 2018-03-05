@@ -45,10 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GeneticAlgorithm\Distance\DistanceFactory.cs" />
     <Compile Include="GeneticAlgorithm\Distance\AbsDistance.cs" />
     <Compile Include="GeneticAlgorithm\Distance\LBP.cs" />
     <Compile Include="GeneticAlgorithm\Distance\Manhattan.cs" />
     <Compile Include="GeneticAlgorithm\GenAlgorithm.cs" />
+    <Compile Include="GeneticAlgorithm\ImageManager.cs" />
     <Compile Include="GeneticAlgorithm\Imagen.cs" />
     <Compile Include="Views\Image Form\ImageViewer.cs">
       <SubType>Form</SubType>
@@ -56,19 +58,19 @@
     <Compile Include="Views\Image Form\ImageViewer.Designer.cs">
       <DependentUpon>ImageViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Main Menu\Form1.cs">
+    <Compile Include="Views\Main Menu\MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Main Menu\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\Main Menu\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Views\Image Form\ImageViewer.resx">
       <DependentUpon>ImageViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Main Menu\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Main Menu\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -68,6 +68,7 @@
             this.txtbox_console.Size = new System.Drawing.Size(442, 96);
             this.txtbox_console.TabIndex = 3;
             this.txtbox_console.Text = "";
+            this.txtbox_console.TextChanged += new System.EventHandler(this.txtbox_console_TextChanged);
             // 
             // ImageViewer
             // 

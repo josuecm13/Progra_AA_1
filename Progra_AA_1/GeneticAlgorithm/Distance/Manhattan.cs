@@ -9,15 +9,20 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
 {
     class Manhattan : AbsDistance
     {
-        public override int GetDistance(Color[] img, Color[] selfImg)
+        public override int GetDistance(Bitmap img, Bitmap selfImg)
         {
             uint output = 0;
-            for (int i = 0; i <img.Length ; i++)
+            for (int i = 0; i <img.Height ; i++)
             {
-                uint r = (uint) img[i].R - selfImg[i].R;
-                uint g = (uint) img[i].G - selfImg[i].G;
-                uint b = (uint) img[i].B - selfImg[i].B;
-                output +=  (r + g + b);
+                for(int j = 0; j < img.Width; j++)
+                {
+                    Color opxl = img.GetPixel(i, j);
+                    Color spxl = selfImg.GetPixel(i, j);
+                    uint r = (uint) opxl.R - spxl.R;
+                    uint g = (uint) opxl.G - spxl.G;
+                    uint b = (uint) opxl.B - spxl.B;
+                    output +=  (r + g + b);
+                }
             }
             return (int) output;
         }

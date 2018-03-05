@@ -35,9 +35,9 @@
             this.lbl_cruce = new System.Windows.Forms.Label();
             this.lbl_Pob = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_poblacion = new System.Windows.Forms.TextBox();
-            this.probaCruce = new System.Windows.Forms.ComboBox();
-            this.probaMuta = new System.Windows.Forms.ComboBox();
+            this.txt_population = new System.Windows.Forms.TextBox();
+            this.txt_prbCross = new System.Windows.Forms.ComboBox();
+            this.txt_prpMut = new System.Windows.Forms.ComboBox();
             this.txt_gens = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -113,18 +113,18 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Número de generaciones";
             // 
-            // txt_poblacion
+            // txt_population
             // 
-            this.txt_poblacion.Location = new System.Drawing.Point(240, 84);
-            this.txt_poblacion.Name = "txt_poblacion";
-            this.txt_poblacion.Size = new System.Drawing.Size(100, 22);
-            this.txt_poblacion.TabIndex = 8;
-            this.txt_poblacion.Text = "40";
+            this.txt_population.Location = new System.Drawing.Point(240, 84);
+            this.txt_population.Name = "txt_population";
+            this.txt_population.Size = new System.Drawing.Size(100, 22);
+            this.txt_population.TabIndex = 8;
+            this.txt_population.Text = "40";
             // 
-            // probaCruce
+            // txt_prbCross
             // 
-            this.probaCruce.FormattingEnabled = true;
-            this.probaCruce.Items.AddRange(new object[] {
+            this.txt_prbCross.FormattingEnabled = true;
+            this.txt_prbCross.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -226,17 +226,17 @@
             "98",
             "99",
             "100"});
-            this.probaCruce.Location = new System.Drawing.Point(240, 117);
-            this.probaCruce.Name = "probaCruce";
-            this.probaCruce.Size = new System.Drawing.Size(100, 24);
-            this.probaCruce.TabIndex = 9;
-            this.probaCruce.Text = "20";
-            this.probaCruce.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.txt_prbCross.Location = new System.Drawing.Point(240, 117);
+            this.txt_prbCross.Name = "txt_prbCross";
+            this.txt_prbCross.Size = new System.Drawing.Size(100, 24);
+            this.txt_prbCross.TabIndex = 9;
+            this.txt_prbCross.Text = "20";
+            this.txt_prbCross.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // probaMuta
+            // txt_prpMut
             // 
-            this.probaMuta.FormattingEnabled = true;
-            this.probaMuta.Items.AddRange(new object[] {
+            this.txt_prpMut.FormattingEnabled = true;
+            this.txt_prpMut.Items.AddRange(new object[] {
             "0",
             "1",
             "2",
@@ -338,11 +338,11 @@
             "98",
             "99",
             "100"});
-            this.probaMuta.Location = new System.Drawing.Point(240, 153);
-            this.probaMuta.Name = "probaMuta";
-            this.probaMuta.Size = new System.Drawing.Size(100, 24);
-            this.probaMuta.TabIndex = 10;
-            this.probaMuta.Text = "29";
+            this.txt_prpMut.Location = new System.Drawing.Point(240, 153);
+            this.txt_prpMut.Name = "txt_prpMut";
+            this.txt_prpMut.Size = new System.Drawing.Size(100, 24);
+            this.txt_prpMut.TabIndex = 10;
+            this.txt_prpMut.Text = "29";
             // 
             // txt_gens
             // 
@@ -379,7 +379,7 @@
             this.imageSelecter.UseVisualStyleBackColor = true;
             this.imageSelecter.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Form1
+            // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -387,9 +387,9 @@
             this.Controls.Add(this.imageSelecter);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txt_gens);
-            this.Controls.Add(this.probaMuta);
-            this.Controls.Add(this.probaCruce);
-            this.Controls.Add(this.txt_poblacion);
+            this.Controls.Add(this.txt_prpMut);
+            this.Controls.Add(this.txt_prbCross);
+            this.Controls.Add(this.txt_population);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_Pob);
             this.Controls.Add(this.lbl_cruce);
@@ -397,7 +397,7 @@
             this.Controls.Add(this.btn_Propio);
             this.Controls.Add(this.btn_Manhattan);
             this.Controls.Add(this.lbl_Titulo);
-            this.Name = "Form1";
+            this.Name = "MainMenu";
             this.Text = "Aproximador de Imágenes";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -413,9 +413,9 @@
         private System.Windows.Forms.Label lbl_cruce;
         private System.Windows.Forms.Label lbl_Pob;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_poblacion;
-        private System.Windows.Forms.ComboBox probaCruce;
-        private System.Windows.Forms.ComboBox probaMuta;
+        private System.Windows.Forms.TextBox txt_population;
+        private System.Windows.Forms.ComboBox txt_prbCross;
+        private System.Windows.Forms.ComboBox txt_prpMut;
         private System.Windows.Forms.TextBox txt_gens;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
