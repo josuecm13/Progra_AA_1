@@ -12,7 +12,7 @@ namespace Progra_AA_1.GeneticAlgorithm
     {
         public Bitmap bitmap { get; set; }
 
-        int distance;
+        public long distance;
         private AbsDistance disType;
         int h, w;
         int porcMutation;
@@ -45,10 +45,11 @@ namespace Progra_AA_1.GeneticAlgorithm
             }
         }
 
-        public int ProcessDistance(Bitmap original)
+        public long ProcessDistance(Bitmap original)
         { 
             if((Mutated) || distance == Int32.MaxValue)
                 distance = disType.GetDistance(original, bitmap);
+            Console.WriteLine(distance);
             Mutated = false;
             return distance;
         }
@@ -88,9 +89,9 @@ namespace Progra_AA_1.GeneticAlgorithm
         public int CompareTo(object obj)
         {
             Imagen img = (Imagen)obj;
-            if (this.distance < img.distance)
-                return 1;
             if (this.distance > img.distance)
+                return 1;
+            if (this.distance < img.distance)
                 return -1;
             return 0;
         }

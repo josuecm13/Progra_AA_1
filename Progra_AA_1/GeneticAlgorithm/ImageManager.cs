@@ -41,11 +41,12 @@ namespace Progra_AA_1.GeneticAlgorithm
 
         public void Evaluate()
         {
-            foreach(Imagen i in population)
+            foreach (Imagen i in population)
             {
                 i.ProcessDistance(bitmap);
             }
             Array.Sort(population);
+            Console.WriteLine("0:" + population[0].distance + " last index:" + population[population.Length -1].distance);
         }
 
         public void Mutate()

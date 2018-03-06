@@ -10,6 +10,6 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
     abstract class AbsDistance
     {
         public Byte[] histogram;
-        public abstract int GetDistance(Bitmap img, Bitmap selfImg);
+        public abstract long GetDistance(Bitmap img, Bitmap selfImg);
     }
 }
