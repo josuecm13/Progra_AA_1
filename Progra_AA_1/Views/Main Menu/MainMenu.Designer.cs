@@ -230,7 +230,7 @@
             this.txt_prbCross.Name = "txt_prbCross";
             this.txt_prbCross.Size = new System.Drawing.Size(100, 24);
             this.txt_prbCross.TabIndex = 9;
-            this.txt_prbCross.Text = "20";
+            this.txt_prbCross.Text = "80";
             this.txt_prbCross.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txt_prpMut
@@ -342,7 +342,8 @@
             this.txt_prpMut.Name = "txt_prpMut";
             this.txt_prpMut.Size = new System.Drawing.Size(100, 24);
             this.txt_prpMut.TabIndex = 10;
-            this.txt_prpMut.Text = "29";
+            this.txt_prpMut.Text = "16";
+            this.txt_prpMut.SelectedIndexChanged += new System.EventHandler(this.txt_prpMut_SelectedIndexChanged);
             // 
             // txt_gens
             // 

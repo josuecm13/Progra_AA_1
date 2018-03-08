@@ -49,7 +49,6 @@ namespace Progra_AA_1.GeneticAlgorithm
         { 
             if((Mutated) || distance == Int32.MaxValue)
                 distance = disType.GetDistance(original, bitmap);
-            Console.WriteLine(distance);
             Mutated = false;
             return distance;
         }
@@ -63,7 +62,7 @@ namespace Progra_AA_1.GeneticAlgorithm
             {
                 for (int j = 0; j < w; j++)
                 {
-                    int chance = rand.Next(1);
+                    int chance = rand.Next(2);
                     if(chance != MOTHER)
                         newBitmap.SetPixel(i, j, this.bitmap.GetPixel(i,j));
                     else

@@ -21,7 +21,7 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
                     int r = Math.Abs(opxl.R - spxl.R);
                     int g = Math.Abs(opxl.G - spxl.G);
                     int b = Math.Abs(opxl.B - spxl.B);
-                    output +=  (r + g + b);
+                    output +=  (r + g + b)/3;
                 }
             }
             return output;

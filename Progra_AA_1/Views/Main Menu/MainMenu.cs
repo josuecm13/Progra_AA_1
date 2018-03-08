@@ -72,5 +72,10 @@ namespace Progra_AA_1
         {
             distanceOption = 1;
         }
+
+        private void txt_prpMut_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

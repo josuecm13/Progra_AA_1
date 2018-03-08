@@ -65,13 +65,15 @@ namespace Progra_AA_1.GeneticAlgorithm
 
             for(int i = 0; i < probCrossOver; i++)
             {
-                int father = rand.Next(population.Length);
+                int father = rand.Next(population.Length/10);
                 int mother = rand.Next(population.Length);
-                int victim = rand.Next(population.Length);
+                int victim = population.Length - 1;//(int)(rand.Next(population.Length/10) + population.Length*0.8);
                 Bitmap son = population[father].Crossing(population[mother].bitmap);
                 Imagen newImg = new Imagen(DistanceFactory.GetInstance(distanceType), bitmap.Height, bitmap.Width, probMutation, NO);
                 newImg.bitmap = son;
+                newImg.ProcessDistance(bitmap);
                 population[victim] = newImg;
+                Array.Sort(population);
             }
 
         }
