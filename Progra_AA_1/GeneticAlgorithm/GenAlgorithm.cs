@@ -10,6 +10,7 @@ namespace Progra_AA_1.GeneticAlgorithm
 {
     class GenAlgorithm 
     {
+        public Object locker = new Object();
         ImageViewer window;
         public Bitmap destino;
         int generations, tenpercent;
@@ -29,17 +30,20 @@ namespace Progra_AA_1.GeneticAlgorithm
             int counter = 0;
             for(int i = 0; i < generations; i++)
             {
+                Console.WriteLine("GEN:" + i+1);
                 manager.Evaluate();
-                manager.CrossOver();
-                manager.Mutate();
-                manager.NewGeneration();
-                if ((generations == 0) || (counter == tenpercent) || i == generations - 1)
+                //manager.Selection();
+                manager.CrossOver(); //implementar mutacion en el nacimiento.... 
+                //manager.NewGeneration();
+                if ((generations == 0) || (counter == tenpercent) || (i == generations - 1))
                 {
-                    int imgIndex = manager.updateTopTen();
-                    window.UpdatePicture(imgIndex);
+                    lock (locker)
+                    {
+                        int imgIndex = manager.updateTopTen();
+                        window.UpdatePicture(imgIndex);
+                    }
                 }
                 counter++;
-                Console.WriteLine("GEN:" + i);
             }
         }
 

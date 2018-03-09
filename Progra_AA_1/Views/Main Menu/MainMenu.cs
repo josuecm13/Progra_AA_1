@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Progra_AA_1.Views.Image_Form;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace Progra_AA_1
 {
@@ -49,12 +50,15 @@ namespace Progra_AA_1
             form.SetDesireImage(path);
             form.SetComponents(Int32.Parse(txt_population.Text), Int32.Parse(txt_gens.Text), Int32.Parse(txt_prpMut.Text), Int32.Parse(txt_prbCross.Text),0,new Bitmap(path));
             form.Show();
-            form.Run();
+            Thread t = new Thread(new ThreadStart(form.Run));
+            t.Start();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
             if (file.ShowDialog() == DialogResult.OK)
             {
                 path = file.FileName;

@@ -11,7 +11,7 @@ namespace Progra_AA_1.GeneticAlgorithm
     class Imagen : IComparable
     {
         public Bitmap bitmap { get; set; }
-
+        private Object acctlock = new Object();
         public long distance;
         private AbsDistance disType;
         int h, w;
@@ -46,9 +46,10 @@ namespace Progra_AA_1.GeneticAlgorithm
         }
 
         public long ProcessDistance(Bitmap original)
-        { 
+        {
+            Bitmap copy = new Bitmap(bitmap);
             if((Mutated) || distance == Int32.MaxValue)
-                distance = disType.GetDistance(original, bitmap);
+                distance = disType.GetDistance(original, copy);
             Mutated = false;
             return distance;
         }
@@ -75,12 +76,16 @@ namespace Progra_AA_1.GeneticAlgorithm
         public void Mutate()
         {
             Random rand = new Random();
-            int times = (int)(h * w * (porcMutation/100));
-            for (int x = 0; x < times; x++)
+            for (int i = 0; i < bitmap.Width; i++)
             {
-                int i = rand.Next(h);
-                int j = rand.Next(w);
-                bitmap.SetPixel(i, j, Color.FromArgb(255, rand.Next(255), rand.Next(255), rand.Next(255)));
+                for (int j = 0; j < bitmap.Height; j++)
+                {
+                    int chance = rand.Next(101);
+                    if (chance < 29)
+                    {
+                        bitmap.SetPixel(i, j, Color.FromArgb(255, rand.Next(255), rand.Next(255), rand.Next(255)));
+                    }  
+                }
             }
             Mutated = true;
         }
