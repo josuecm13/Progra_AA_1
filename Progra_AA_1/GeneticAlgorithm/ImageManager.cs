@@ -14,21 +14,24 @@ namespace Progra_AA_1.GeneticAlgorithm
         int probCrossOver;
         int probMutation;
         int distanceType;
+        int pMutIndiv;
         Bitmap bitmap;
-        Imagen[] population;
+        public Imagen[] population;
         public Imagen[] ten;
         private int index = 0;
         private Imagen[] selection;
 
-        public ImageManager(int n, Bitmap b, int DistanceType, int probCrossOver, int probMutation)
+        public ImageManager(int n, Bitmap b, int DistanceType, int probCrossOver, int probMutation, int pMutIndiv)
         {
             this.probCrossOver = probCrossOver;
             this.probMutation = probMutation;
+            this.pMutIndiv = pMutIndiv;
             this.bitmap = b;
             distanceType = DistanceType;
             ten = new Imagen[10];
             selection = new Imagen[(int)(n * 0.3 * 0.2)];
             GeneratePopulation(n);
+
         }
 
         private void GeneratePopulation(int n)
@@ -62,7 +65,7 @@ namespace Progra_AA_1.GeneticAlgorithm
             for (int i = 0; i < probMutation/100 * population.Length; i ++)
             {
                 int index = rand.Next(population.Length);
-                population[index].Mutate();
+                population[index].Mutate(pMutIndiv);
             }
         }
 
@@ -72,18 +75,14 @@ namespace Progra_AA_1.GeneticAlgorithm
             int proi = 0;
             for(int i = 0; i < probCrossOver; i++)
             {
-                int father = rand.Next((int)(population.Length*0.3));
-                int mother = rand.Next((population.Length));
+                int father = rand.Next((int)(population.Length));
+                int mother = rand.Next((int)(population.Length));
                 int victim = population.Length - 1;//(int)(rand.Next(population.Length/10) + population.Length*0.8);
                 Bitmap son = population[father].Crossing(population[mother].bitmap);
                 Imagen newImg = new Imagen(DistanceFactory.GetInstance(distanceType), bitmap.Height, bitmap.Width, probMutation, NO);
                 newImg.bitmap = son;
                 newImg.ProcessDistance(bitmap);
                 population[victim] = newImg;
-                if(proi < probMutation)
-                {
-                    population[victim].Mutate();
-                }
                 Array.Sort(population);
             }
 

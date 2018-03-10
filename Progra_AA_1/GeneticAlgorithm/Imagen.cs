@@ -14,7 +14,7 @@ namespace Progra_AA_1.GeneticAlgorithm
         private Object acctlock = new Object();
         public long distance;
         private AbsDistance disType;
-        int h, w;
+        int h, w, Length;
         int porcMutation;
         private bool Mutated = false;
 
@@ -27,6 +27,8 @@ namespace Progra_AA_1.GeneticAlgorithm
             this.porcMutation = porcMutation;
             if(yn != 1)
                 GenerateImage(height, width);
+            Length = h * w;
+            
         }
 
         private void GenerateImage(int h, int w)
@@ -37,9 +39,9 @@ namespace Progra_AA_1.GeneticAlgorithm
             {
                 for (int j = 0; j < w; j++)
                 {
-                    int r = rand.Next(255);
-                    int g = rand.Next(255);
-                    int b = rand.Next(255);
+                    int r = rand.Next(256);
+                    int g = rand.Next(256);
+                    int b = rand.Next(256);
                     bitmap.SetPixel(i, j, Color.FromArgb(255, r, g, b));
                 }
             }
@@ -73,21 +75,18 @@ namespace Progra_AA_1.GeneticAlgorithm
             return newBitmap;
         }
 
-        public void Mutate()
+        public void Mutate(int Changepcnt)
         {
             Random rand = new Random();
-            for (int i = 0; i < bitmap.Width; i++)
+            for(int x = 0; x < Changepcnt/100 * h * w; x++)
             {
-                for (int j = 0; j < bitmap.Height; j++)
-                {
-                    int chance = rand.Next(101);
-                    if (chance < 29)
-                    {
-                        bitmap.SetPixel(i, j, Color.FromArgb(255, rand.Next(255), rand.Next(255), rand.Next(255)));
-                    }  
-                }
+                int i = rand.Next(h);
+                int j = rand.Next(w);
+                int r = rand.Next(255);
+                int g = rand.Next(255);
+                int b = rand.Next(255);
+                bitmap.SetPixel(i, j, Color.FromArgb(255,r,g,b));
             }
-            Mutated = true;
         }
 
         public int CompareTo(object obj)

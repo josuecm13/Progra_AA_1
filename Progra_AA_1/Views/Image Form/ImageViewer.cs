@@ -24,9 +24,9 @@ namespace Progra_AA_1.Views.Image_Form
         }
 
         
-        public void SetComponents(int population,int generations,int pMutation,int pCross, int distype,Bitmap b)
+        public void SetComponents(int population,int generations,int pMutation,int pCross, int distype,int pMutIndiv,Bitmap b)
         {
-            ga = new GenAlgorithm(population,b,distype,pCross,pMutation,generations,this);
+            ga = new GenAlgorithm(population,b,distype,pCross,pMutation,generations,pMutIndiv,this);
         }
 
 
@@ -44,7 +44,7 @@ namespace Progra_AA_1.Views.Image_Form
 
         public void UpdatePicture(int i)
         {
-            randomPicBox.Image = ga.manager.ten[i].bitmap;
+            randomPicBox.Image = ga.manager.population[0].bitmap;
         }
 
         private void txtbox_console_TextChanged(object sender, EventArgs e)
