@@ -9,6 +9,14 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
 {
     class Manhattan : AbsDistance
     {
+        public override int BestPixel(Color x, Color y)
+        {
+            int r = Math.Abs(x.R - y.R);
+            int g = Math.Abs(x.G - y.G);
+            int b = Math.Abs(x.B - y.B);
+            return r + g + b;
+        }
+
         public override long GetDistance(Bitmap img, Bitmap selfImg)
         {
             long output = 0;

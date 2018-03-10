@@ -14,7 +14,7 @@ namespace Progra_AA_1.GeneticAlgorithm
         private Object acctlock = new Object();
         public long distance;
         private AbsDistance disType;
-        int h, w, Length;
+        public int h, w, Length;
         int porcMutation;
         private bool Mutated = false;
 
@@ -54,6 +54,27 @@ namespace Progra_AA_1.GeneticAlgorithm
                 distance = disType.GetDistance(original, copy);
             Mutated = false;
             return distance;
+        }
+
+        public Bitmap Crossin(Bitmap couple, Bitmap original)
+        {
+            Random rand = new Random();
+            Bitmap newBitmap = new Bitmap(h, w);
+            for (int i = 0; i < h; i++)
+            {
+                for (int j = 0; j < w; j++)
+                {
+                    Color fath = this.bitmap.GetPixel(i, j);
+                    Color moth = couple.GetPixel(i, j);
+                    int distself = disType.BestPixel(fath,original.GetPixel(i,j));
+                    int distcoup = disType.BestPixel(moth, original.GetPixel(i, j));
+                    if (distself < distcoup)
+                        newBitmap.SetPixel(i, j, fath);
+                    else
+                        newBitmap.SetPixel(i, j, moth);
+                }
+            }
+            return newBitmap;
         }
 
         public Bitmap Crossing(Bitmap couple)
