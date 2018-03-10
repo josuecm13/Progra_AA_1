@@ -121,7 +121,7 @@
             this.txt_population.Name = "txt_population";
             this.txt_population.Size = new System.Drawing.Size(100, 22);
             this.txt_population.TabIndex = 8;
-            this.txt_population.Text = "40";
+            this.txt_population.Text = "100";
             // 
             // txt_prbCross
             // 
@@ -344,7 +344,7 @@
             this.txt_prpMut.Name = "txt_prpMut";
             this.txt_prpMut.Size = new System.Drawing.Size(100, 24);
             this.txt_prpMut.TabIndex = 10;
-            this.txt_prpMut.Text = "16";
+            this.txt_prpMut.Text = "46";
             this.txt_prpMut.SelectedIndexChanged += new System.EventHandler(this.txt_prpMut_SelectedIndexChanged);
             // 
             // txt_gens
