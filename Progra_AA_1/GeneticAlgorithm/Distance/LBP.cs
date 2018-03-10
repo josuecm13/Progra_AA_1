@@ -9,6 +9,11 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
 {
     class LBP : AbsDistance
     {
+        public override int BestPixel(Color a, Color b)
+        {
+            throw new NotImplementedException();
+        }
+
         public override long GetDistance(Bitmap img, Bitmap selfImg)
         {
             throw new NotImplementedException();

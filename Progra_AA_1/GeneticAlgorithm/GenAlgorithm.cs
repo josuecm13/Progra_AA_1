@@ -33,7 +33,12 @@ namespace Progra_AA_1.GeneticAlgorithm
                 Console.WriteLine("GEN:" + (i+1));
                 manager.Evaluate();
                 //manager.Selection();
-                manager.CrossOver(); //implementar mutacion en el nacimiento.... 
+                //if((i+1)%4 == 0)
+                //{
+                //    manager.CrossO();
+                //}
+                //else
+                    manager.CrossOver(); //implementar mutacion en el nacimiento.... 
                 manager.Mutate();
                 //manager.NewGeneration();
                 if (true)//(generations == 0) || (counter == tenpercent) || (i == generations - 1))
