@@ -51,7 +51,7 @@ namespace Progra_AA_1.GeneticAlgorithm
                 i.ProcessDistance(bitmap);
             }
             Array.Sort(population);
-            Console.WriteLine("0:" + population[0].distance + " last index:" + population[population.Length -1].distance);
+            Console.WriteLine("fitness:" + (1-(population[0].distance/(population[0].Length)))*100 +"%");
         }
 
         public void Reproduction()

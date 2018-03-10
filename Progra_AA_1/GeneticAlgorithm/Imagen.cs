@@ -14,7 +14,7 @@ namespace Progra_AA_1.GeneticAlgorithm
         private Object acctlock = new Object();
         public long distance;
         private AbsDistance disType;
-        int h, w, Length;
+        public int h, w, Length;
         int porcMutation;
         private bool Mutated = false;
 
