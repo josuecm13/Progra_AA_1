@@ -18,7 +18,7 @@ namespace Progra_AA_1.GeneticAlgorithm
                 case Type.MANHATTAN:
                     return new Manhattan();
                 case Type.DARWIN:
-                    return new LBP();
+                    return new Darwin();
                 default:
                     return null;
             }

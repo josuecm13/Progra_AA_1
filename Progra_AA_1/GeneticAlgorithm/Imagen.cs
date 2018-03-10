@@ -34,10 +34,10 @@ namespace Progra_AA_1.GeneticAlgorithm
         private void GenerateImage(int h, int w)
         {
             Random rand = new Random();
-            bitmap = new Bitmap(h, w);
-            for (int i = 0; i < h; i++)
+            bitmap = new Bitmap(w, h);
+            for (int i = 0; i < w; i++)
             {
-                for (int j = 0; j < w; j++)
+                for (int j = 0; j < h; j++)
                 {
                     int r = rand.Next(256);
                     int g = rand.Next(256);
