@@ -38,7 +38,7 @@ namespace Progra_AA_1.GeneticAlgorithm
                 //    manager.CrossO();
                 //}
                 //else
-                    manager.CrossOver(); //implementar mutacion en el nacimiento.... 
+                manager.CrossOver(); //implementar mutacion en el nacimiento.... 
                 manager.Mutate();
                 //manager.NewGeneration();
                 if (true)//(generations == 0) || (counter == tenpercent) || (i == generations - 1))

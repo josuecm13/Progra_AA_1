@@ -70,6 +70,8 @@
     <Compile Include="GeneticAlgorithm\Distance\Darwin.cs" />
     <Compile Include="GeneticAlgorithm\Distance\Manhattan.cs" />
     <Compile Include="GeneticAlgorithm\GenAlgorithm.cs" />
+    <Compile Include="GeneticAlgorithm\Histograms\ColorHisto.cs" />
+    <Compile Include="GeneticAlgorithm\Histograms\Contrast.cs" />
     <Compile Include="GeneticAlgorithm\ImageManager.cs" />
     <Compile Include="GeneticAlgorithm\Imagen.cs" />
     <Compile Include="Views\Image Form\ImageViewer.cs">

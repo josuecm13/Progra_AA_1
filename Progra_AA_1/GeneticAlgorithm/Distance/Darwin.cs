@@ -23,11 +23,9 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
         public byte[] ToArray(Bitmap bitmp)
         {
             var bitmapData = bitmp.LockBits(new Rectangle(0, 0, bitmp.Width, bitmp.Height), ImageLockMode.ReadWrite, PixelFormat.Format8bppIndexed);
-            //int bytes = bitmp.Width * bitmp.Height * (Image.GetPixelFormatSize(PixelFormat.Canonical) / 8);
             int bytes = Math.Abs(bitmapData.Stride) * bitmp.Height;
             byte[] b1bytes = new byte[bytes];
 
-            // Copy bitmap to byte[]
             Marshal.Copy(bitmapData.Scan0, b1bytes, 0, bytes);
 
             bitmp.UnlockBits(bitmapData);
@@ -92,5 +90,12 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
             return auxMatrix;
         }
 
+        public override int BestPixel(Color x, Color y)
+        {
+            int r = Math.Abs(x.R - y.R);
+            int g = Math.Abs(x.G - y.G);
+            int b = Math.Abs(x.B - y.B);
+            return r + g + b;
+        }
     }
 }

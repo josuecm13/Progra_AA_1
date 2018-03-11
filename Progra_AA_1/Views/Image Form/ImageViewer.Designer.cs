@@ -40,7 +40,7 @@
             // 
             this.originalPictureBox.Location = new System.Drawing.Point(12, 12);
             this.originalPictureBox.Name = "originalPictureBox";
-            this.originalPictureBox.Size = new System.Drawing.Size(395, 385);
+            this.originalPictureBox.Size = new System.Drawing.Size(442, 385);
             this.originalPictureBox.TabIndex = 0;
             this.originalPictureBox.TabStop = false;
             // 
@@ -51,6 +51,7 @@
             this.randomPicBox.Size = new System.Drawing.Size(442, 385);
             this.randomPicBox.TabIndex = 1;
             this.randomPicBox.TabStop = false;
+            this.randomPicBox.Click += new System.EventHandler(this.randomPicBox_Click);
             // 
             // label1
             // 
@@ -65,6 +66,7 @@
             // 
             this.txtbox_console.Location = new System.Drawing.Point(526, 415);
             this.txtbox_console.Name = "txtbox_console";
+            this.txtbox_console.ReadOnly = true;
             this.txtbox_console.Size = new System.Drawing.Size(442, 96);
             this.txtbox_console.TabIndex = 3;
             this.txtbox_console.Text = "";

@@ -48,7 +48,7 @@ namespace Progra_AA_1
         {
             ImageViewer form = new ImageViewer();
             form.SetDesireImage(path);
-            form.SetComponents(Int32.Parse(txt_population.Text), Int32.Parse(txt_gens.Text), Int32.Parse(txt_prpMut.Text), Int32.Parse(txt_prbCross.Text),0,int.Parse(txt_Genes_a_mutar.Text),new Bitmap(path));
+            form.SetComponents(Int32.Parse(txt_population.Text), Int32.Parse(txt_gens.Text), Int32.Parse(txt_prpMut.Text), Int32.Parse(txt_prbCross.Text), distanceOption,int.Parse(txt_Genes_a_mutar.Text),new Bitmap(path));
             form.Show();
             Thread t = new Thread(new ThreadStart(form.Run));
             t.Start();

@@ -33,7 +33,17 @@ namespace Progra_AA_1.Views.Image_Form
         public void SetDesireImage(string filename)
         {
             Bitmap bitmap = new Bitmap(filename);
-            originalPictureBox.Image = bitmap;
+            originalPictureBox.Image = Imagen.ResizeImage(bitmap, 300, 300);
+        }
+
+        private void originalPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void randomPicBox_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void SetRandomImage(Bitmap b)
@@ -44,7 +54,7 @@ namespace Progra_AA_1.Views.Image_Form
 
         public void UpdatePicture(int i)
         {
-            randomPicBox.Image = ga.manager.population[0].bitmap;
+            randomPicBox.Image = Imagen.ResizeImage(ga.manager.population[0].bitmap, 300, 300);
         }
 
         private void txtbox_console_TextChanged(object sender, EventArgs e)
