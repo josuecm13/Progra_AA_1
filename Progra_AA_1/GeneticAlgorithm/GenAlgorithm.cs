@@ -25,6 +25,15 @@ namespace Progra_AA_1.GeneticAlgorithm
             window = w;
         }
 
+        public GenAlgorithm(int n, Bitmap bitmap, int distanceType, int probCrossOver, int probMutation, int generations, int pMutIndiv, int pSelection, ImageViewer w)
+        {
+            manager = new ImageManager(n, bitmap, distanceType, probCrossOver, probMutation, pMutIndiv, pSelection);
+            destino = bitmap;
+            tenpercent = (int)(generations * 0.1);
+            this.generations = generations;
+            window = w;
+        }
+
         public void Run()
         {
             int counter = 0;
@@ -41,7 +50,7 @@ namespace Progra_AA_1.GeneticAlgorithm
                     manager.CrossOver(); //implementar mutacion en el nacimiento.... 
                 manager.Mutate();
                 //manager.NewGeneration();
-                if (true)//(generations == 0) || (counter == tenpercent) || (i == generations - 1))
+                if ((generations == 0) || (counter == tenpercent) || (i == generations - 1))
                 {
                     lock (locker)
                     {

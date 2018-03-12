@@ -44,6 +44,8 @@
             this.imageSelecter = new System.Windows.Forms.Button();
             this.txt_Genes_a_mutar = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_selection = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lbl_Titulo
@@ -58,7 +60,7 @@
             // btn_Manhattan
             // 
             this.btn_Manhattan.AutoSize = true;
-            this.btn_Manhattan.Location = new System.Drawing.Point(54, 260);
+            this.btn_Manhattan.Location = new System.Drawing.Point(54, 317);
             this.btn_Manhattan.Name = "btn_Manhattan";
             this.btn_Manhattan.Size = new System.Drawing.Size(147, 21);
             this.btn_Manhattan.TabIndex = 1;
@@ -70,7 +72,7 @@
             // btn_Propio
             // 
             this.btn_Propio.AutoSize = true;
-            this.btn_Propio.Location = new System.Drawing.Point(54, 297);
+            this.btn_Propio.Location = new System.Drawing.Point(54, 354);
             this.btn_Propio.Name = "btn_Propio";
             this.btn_Propio.Size = new System.Drawing.Size(170, 21);
             this.btn_Propio.TabIndex = 2;
@@ -82,7 +84,7 @@
             // lbl_mutacion
             // 
             this.lbl_mutacion.AutoSize = true;
-            this.lbl_mutacion.Location = new System.Drawing.Point(51, 185);
+            this.lbl_mutacion.Location = new System.Drawing.Point(51, 148);
             this.lbl_mutacion.Name = "lbl_mutacion";
             this.lbl_mutacion.Size = new System.Drawing.Size(168, 17);
             this.lbl_mutacion.TabIndex = 4;
@@ -91,7 +93,7 @@
             // lbl_cruce
             // 
             this.lbl_cruce.AutoSize = true;
-            this.lbl_cruce.Location = new System.Drawing.Point(51, 120);
+            this.lbl_cruce.Location = new System.Drawing.Point(51, 88);
             this.lbl_cruce.Name = "lbl_cruce";
             this.lbl_cruce.Size = new System.Drawing.Size(146, 17);
             this.lbl_cruce.TabIndex = 5;
@@ -100,7 +102,7 @@
             // lbl_Pob
             // 
             this.lbl_Pob.AutoSize = true;
-            this.lbl_Pob.Location = new System.Drawing.Point(51, 84);
+            this.lbl_Pob.Location = new System.Drawing.Point(51, 58);
             this.lbl_Pob.Name = "lbl_Pob";
             this.lbl_Pob.Size = new System.Drawing.Size(145, 17);
             this.lbl_Pob.TabIndex = 6;
@@ -109,7 +111,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 217);
+            this.label1.Location = new System.Drawing.Point(51, 176);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(168, 17);
             this.label1.TabIndex = 7;
@@ -117,7 +119,7 @@
             // 
             // txt_population
             // 
-            this.txt_population.Location = new System.Drawing.Point(279, 84);
+            this.txt_population.Location = new System.Drawing.Point(278, 53);
             this.txt_population.Name = "txt_population";
             this.txt_population.Size = new System.Drawing.Size(100, 22);
             this.txt_population.TabIndex = 8;
@@ -228,7 +230,7 @@
             "98",
             "99",
             "100"});
-            this.txt_prbCross.Location = new System.Drawing.Point(279, 117);
+            this.txt_prbCross.Location = new System.Drawing.Point(278, 81);
             this.txt_prbCross.Name = "txt_prbCross";
             this.txt_prbCross.Size = new System.Drawing.Size(100, 24);
             this.txt_prbCross.TabIndex = 9;
@@ -340,7 +342,7 @@
             "98",
             "99",
             "100"});
-            this.txt_prpMut.Location = new System.Drawing.Point(279, 185);
+            this.txt_prpMut.Location = new System.Drawing.Point(278, 141);
             this.txt_prpMut.Name = "txt_prpMut";
             this.txt_prpMut.Size = new System.Drawing.Size(100, 24);
             this.txt_prpMut.TabIndex = 10;
@@ -349,7 +351,7 @@
             // 
             // txt_gens
             // 
-            this.txt_gens.Location = new System.Drawing.Point(279, 217);
+            this.txt_gens.Location = new System.Drawing.Point(278, 171);
             this.txt_gens.Name = "txt_gens";
             this.txt_gens.Size = new System.Drawing.Size(100, 22);
             this.txt_gens.TabIndex = 11;
@@ -487,7 +489,7 @@
             "98",
             "99",
             "100"});
-            this.txt_Genes_a_mutar.Location = new System.Drawing.Point(278, 151);
+            this.txt_Genes_a_mutar.Location = new System.Drawing.Point(278, 111);
             this.txt_Genes_a_mutar.Name = "txt_Genes_a_mutar";
             this.txt_Genes_a_mutar.Size = new System.Drawing.Size(100, 24);
             this.txt_Genes_a_mutar.TabIndex = 15;
@@ -497,18 +499,141 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 154);
+            this.label2.Location = new System.Drawing.Point(51, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(186, 17);
             this.label2.TabIndex = 14;
             this.label2.Text = "Pocentaje de genes a mutar";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(51, 206);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(161, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Procentaje de Seleccion";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // txt_selection
+            // 
+            this.txt_selection.FormattingEnabled = true;
+            this.txt_selection.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99",
+            "100"});
+            this.txt_selection.Location = new System.Drawing.Point(278, 199);
+            this.txt_selection.Name = "txt_selection";
+            this.txt_selection.Size = new System.Drawing.Size(100, 24);
+            this.txt_selection.TabIndex = 17;
+            this.txt_selection.Text = "5";
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 392);
+            this.Controls.Add(this.txt_selection);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_Genes_a_mutar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.imageSelecter);
@@ -549,6 +674,8 @@
         private System.Windows.Forms.Button imageSelecter;
         private System.Windows.Forms.ComboBox txt_Genes_a_mutar;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox txt_selection;
     }
 }
 
