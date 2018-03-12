@@ -20,9 +20,9 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
             return result;
         }
 
-        public byte[] ToArray(Bitmap bitmp)
+        public static byte[] ToArray(Bitmap bitmp)
         {
-            var bitmapData = bitmp.LockBits(new Rectangle(0, 0, bitmp.Width, bitmp.Height), ImageLockMode.ReadWrite, PixelFormat.Format8bppIndexed);
+            var bitmapData = bitmp.LockBits(new Rectangle(0, 0, bitmp.Width, bitmp.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
             int bytes = Math.Abs(bitmapData.Stride) * bitmp.Height;
             byte[] b1bytes = new byte[bytes];
 

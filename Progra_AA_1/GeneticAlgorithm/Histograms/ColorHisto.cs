@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Progra_AA_1.GeneticAlgorithm.Distance;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -13,23 +14,16 @@ namespace Progra_AA_1.GeneticAlgorithm.Histograms
         public byte[,] Histogram(Bitmap bitmap)
         {
             byte[,] histogram = new byte[3, 256];
-
+            byte[] colorArray = Darwin.ToArray(bitmap);
             byte red = 0;
             byte green = 0;
             byte blue = 0;
 
-            for (int i = 0; i < bitmap.Width; i++)
+            for (int e = 0; e < colorArray.Length; e += 3)
             {
-                for (int j = 0; j < bitmap.Height; j++)
-                {
-                    red = bitmap.GetPixel(i, j).R;
-                    green = bitmap.GetPixel(i, j).G;
-                    blue = bitmap.GetPixel(i, j).B;
-
-                    histogram[0, red] += 1;
-                    histogram[1, green] += 1;
-                    histogram[2, blue] += 1;
-                }
+                histogram[0, colorArray[e]] += 1;
+                histogram[1, colorArray[e + 1]] += 1;
+                histogram[2, colorArray[e + 2]] += 1;
             }
             return histogram;
         }
