@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -44,6 +45,19 @@ namespace Progra_AA_1.Views.Image_Form
         private void randomPicBox_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void originalPictureBox_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Top10 form = new Top10();
+            ga.manager.updateTopTen();
+            form.SetTop10(ga.manager.ten);
+            form.Show();
         }
 
         private void SetRandomImage(Bitmap b)
