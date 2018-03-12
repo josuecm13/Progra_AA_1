@@ -40,14 +40,14 @@ namespace Progra_AA_1.GeneticAlgorithm
                 //else
                 manager.CrossOver(); //implementar mutacion en el nacimiento.... 
                 manager.Mutate();
+                window.UpdatePicture();
                 //manager.NewGeneration();
-                if (true)//(generations == 0) || (counter == tenpercent) || (i == generations - 1))
+                if ((generations == 0) || (counter == tenpercent) || (i == generations - 1))
                 {
                     lock (locker)
                     {
                         int imgIndex = manager.updateTopTen();
                         //Console.WriteLine("index:" + imgIndex);
-                        window.UpdatePicture(imgIndex);
                         //Console.WriteLine("IMAGEN CAMBIADA");
                         counter = 0;
                     }
