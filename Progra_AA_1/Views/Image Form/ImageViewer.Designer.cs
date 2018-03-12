@@ -32,6 +32,7 @@
             this.randomPicBox = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtbox_console = new System.Windows.Forms.RichTextBox();
+            this.top10btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.originalPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.randomPicBox)).BeginInit();
             this.SuspendLayout();
@@ -40,9 +41,10 @@
             // 
             this.originalPictureBox.Location = new System.Drawing.Point(12, 12);
             this.originalPictureBox.Name = "originalPictureBox";
-            this.originalPictureBox.Size = new System.Drawing.Size(395, 385);
+            this.originalPictureBox.Size = new System.Drawing.Size(442, 385);
             this.originalPictureBox.TabIndex = 0;
             this.originalPictureBox.TabStop = false;
+            this.originalPictureBox.Click += new System.EventHandler(this.originalPictureBox_Click_1);
             // 
             // randomPicBox
             // 
@@ -51,6 +53,7 @@
             this.randomPicBox.Size = new System.Drawing.Size(442, 385);
             this.randomPicBox.TabIndex = 1;
             this.randomPicBox.TabStop = false;
+            this.randomPicBox.Click += new System.EventHandler(this.randomPicBox_Click);
             // 
             // label1
             // 
@@ -65,16 +68,28 @@
             // 
             this.txtbox_console.Location = new System.Drawing.Point(526, 415);
             this.txtbox_console.Name = "txtbox_console";
+            this.txtbox_console.ReadOnly = true;
             this.txtbox_console.Size = new System.Drawing.Size(442, 96);
             this.txtbox_console.TabIndex = 3;
             this.txtbox_console.Text = "";
             this.txtbox_console.TextChanged += new System.EventHandler(this.txtbox_console_TextChanged);
             // 
+            // top10btn
+            // 
+            this.top10btn.Location = new System.Drawing.Point(883, 526);
+            this.top10btn.Name = "top10btn";
+            this.top10btn.Size = new System.Drawing.Size(85, 41);
+            this.top10btn.TabIndex = 4;
+            this.top10btn.Text = "Top 10";
+            this.top10btn.UseVisualStyleBackColor = true;
+            this.top10btn.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ImageViewer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(980, 523);
+            this.ClientSize = new System.Drawing.Size(982, 579);
+            this.Controls.Add(this.top10btn);
             this.Controls.Add(this.txtbox_console);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.randomPicBox);
@@ -94,5 +109,6 @@
         private System.Windows.Forms.PictureBox randomPicBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox txtbox_console;
+        private System.Windows.Forms.Button top10btn;
     }
 }

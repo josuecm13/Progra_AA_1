@@ -47,8 +47,9 @@ namespace Progra_AA_1.GeneticAlgorithm
                 //    manager.CrossO();
                 //}
                 //else
-                    manager.CrossOver(); //implementar mutacion en el nacimiento.... 
+                manager.CrossOver(); //implementar mutacion en el nacimiento.... 
                 manager.Mutate();
+                window.UpdatePicture();
                 //manager.NewGeneration();
                 if ((generations == 0) || (counter == tenpercent) || (i == generations - 1))
                 {
@@ -56,7 +57,6 @@ namespace Progra_AA_1.GeneticAlgorithm
                     {
                         int imgIndex = manager.updateTopTen();
                         //Console.WriteLine("index:" + imgIndex);
-                        window.UpdatePicture(imgIndex);
                         //Console.WriteLine("IMAGEN CAMBIADA");
                         counter = 0;
                     }

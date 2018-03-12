@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -33,7 +34,30 @@ namespace Progra_AA_1.Views.Image_Form
         public void SetDesireImage(string filename)
         {
             Bitmap bitmap = new Bitmap(filename);
-            originalPictureBox.Image = bitmap;
+            originalPictureBox.Image = Imagen.ResizeImage(bitmap, 300, 300);
+        }
+
+        private void originalPictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void randomPicBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void originalPictureBox_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Top10 form = new Top10();
+            ga.manager.updateTopTen();
+            form.SetTop10(ga.manager.ten);
+            form.Show();
         }
 
         private void SetRandomImage(Bitmap b)
@@ -42,14 +66,24 @@ namespace Progra_AA_1.Views.Image_Form
             randomPicBox.Image = img.bitmap;
         }
 
+        public void UpdatePicture()
+        {
+            randomPicBox.Image = Imagen.ResizeImage(ga.manager.population[0].bitmap, 300, 300);
+        }
+
         public void UpdatePicture(int i)
         {
-            randomPicBox.Image = ga.manager.population[0].bitmap;
+            randomPicBox.Image = Imagen.ResizeImage(ga.manager.ten[i].bitmap, 300, 300);
         }
 
         private void txtbox_console_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public void SwitchTopTen()
+        {
+            top10btn.Enabled = !top10btn.Enabled;
         }
 
         public void Run()

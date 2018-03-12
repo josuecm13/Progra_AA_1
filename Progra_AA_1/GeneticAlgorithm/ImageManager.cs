@@ -97,6 +97,8 @@ namespace Progra_AA_1.GeneticAlgorithm
             }
         }
 
+        
+
         public void CrossOver()
         {
             Random rand = new Random();
