@@ -14,7 +14,7 @@ namespace Progra_AA_1.GeneticAlgorithm
         int probCrossOver;
         int probMutation;
         int distanceType;
-        int pMutIndiv;
+        int pMutIndiv, pSelection;
         Bitmap bitmap;
         public Imagen[] population;
         public Imagen[] ten;
@@ -26,6 +26,20 @@ namespace Progra_AA_1.GeneticAlgorithm
             this.probCrossOver = probCrossOver;
             this.probMutation = probMutation;
             this.pMutIndiv = pMutIndiv;
+            this.bitmap = b;
+            distanceType = DistanceType;
+            ten = new Imagen[10];
+            selection = new Imagen[(int)(n * 0.3 * 0.2)];
+            GeneratePopulation(n);
+
+        }
+
+        public ImageManager(int n, Bitmap b, int DistanceType, int probCrossOver, int probMutation, int pMutIndiv, int pSelection)
+        {
+            this.probCrossOver = probCrossOver;
+            this.probMutation = probMutation;
+            this.pMutIndiv = pMutIndiv;
+            this.pSelection = pSelection;
             this.bitmap = b;
             distanceType = DistanceType;
             ten = new Imagen[10];
@@ -58,10 +72,6 @@ namespace Progra_AA_1.GeneticAlgorithm
             Console.WriteLine("fitness " + (Math.Round(100 - f_n*100, 2)) + "%");//Console.WriteLine("fitness:" + (100-(population[0].distance/(population[0].Length *255)) * 100) +"%");
         }
 
-        public void Reproduction()
-        {
-
-        }
 
         public void Mutate()
         {
@@ -69,13 +79,22 @@ namespace Progra_AA_1.GeneticAlgorithm
             for (int i = 0; i < probMutation/100 * population.Length; i ++)
             {
                 int index = rand.Next(population.Length);
+                while(population[index].Selected)
+                    index = rand.Next(population.Length);
                 population[index].Mutate(pMutIndiv);
             }
         }
 
         public void Selection()
         {
-
+            Random rand = new Random();
+            int times = (population.Length * (pSelection / 100));
+            Imagen[] selected = new Imagen[times];
+            for(int i = 0; i < times; i++)
+            {
+                int index = rand.Next(times * 2 );
+                population[index].Selected = true;
+            }
         }
 
         

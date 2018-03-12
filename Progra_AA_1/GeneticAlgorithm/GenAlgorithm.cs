@@ -25,6 +25,15 @@ namespace Progra_AA_1.GeneticAlgorithm
             window = w;
         }
 
+        public GenAlgorithm(int n, Bitmap bitmap, int distanceType, int probCrossOver, int probMutation, int generations, int pMutIndiv, int pSelection, ImageViewer w)
+        {
+            manager = new ImageManager(n, bitmap, distanceType, probCrossOver, probMutation, pMutIndiv, pSelection);
+            destino = bitmap;
+            tenpercent = (int)(generations * 0.1);
+            this.generations = generations;
+            window = w;
+        }
+
         public void Run()
         {
             int counter = 0;

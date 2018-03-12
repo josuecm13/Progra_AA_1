@@ -25,9 +25,9 @@ namespace Progra_AA_1.Views.Image_Form
         }
 
         
-        public void SetComponents(int population,int generations,int pMutation,int pCross, int distype,int pMutIndiv,Bitmap b)
+        public void SetComponents(int population,int generations,int pMutation,int pCross, int distype,int pMutIndiv,int pSelection,Bitmap b)
         {
-            ga = new GenAlgorithm(population,b,distype,pCross,pMutation,generations,pMutIndiv,this);
+            ga = new GenAlgorithm(population,b,distype,pCross,pMutation,generations,pMutIndiv,pSelection,this);
         }
 
 

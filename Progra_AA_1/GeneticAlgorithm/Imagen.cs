@@ -18,6 +18,7 @@ namespace Progra_AA_1.GeneticAlgorithm
         private AbsDistance disType;
         public int h, w, Length;
         int porcMutation;
+        public bool Selected = false;
         private bool Mutated = false;
 
         public Imagen(AbsDistance distype, int height, int width, int porcMutation ,int yn)

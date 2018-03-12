@@ -19,20 +19,38 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
 
         public override long GetDistance(Bitmap img, Bitmap selfImg)
         {
-            long output = 0;
-            for (int i = 0; i <img.Width ; i++)
+            if (Type ==0)
             {
-                for(int j = 0; j < img.Height; j++)
+                return GetDistColor(img, selfImg);
+            }
+            else
+            {
+                return GetHistDist(img, selfImg);
+            }
+        }
+
+        private long GetDistColor(Bitmap img, Bitmap selfImg)
+        {
+            long output = 0;
+            for (int i = 0; i < img.Width; i++)
+            {
+                for (int j = 0; j < img.Height; j++)
                 {
                     Color opxl = img.GetPixel(i, j);
                     Color spxl = selfImg.GetPixel(i, j);
                     int r = Math.Abs(opxl.R - spxl.R);
                     int g = Math.Abs(opxl.G - spxl.G);
                     int b = Math.Abs(opxl.B - spxl.B);
-                    output +=  (r + g + b)/3;
+                    output += (r + g + b) / 3;
                 }
             }
             return output;
         }
+
+        private long GetHistDist(Bitmap img, Bitmap selfImg)
+        {
+            return 0;
+        }
+
     }
 }
