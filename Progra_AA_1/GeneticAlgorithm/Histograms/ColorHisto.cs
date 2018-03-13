@@ -8,13 +8,15 @@ using System.Threading.Tasks;
 
 namespace Progra_AA_1.GeneticAlgorithm.Histograms
 {
-    class ColorHistogram
+    static class ColorHistogram
     {
 
-        public byte[,] Histogram(Bitmap bitmap)
+        public static byte[] Histogram(Bitmap bitmap)
         {
-            byte[,] histogram = new byte[3, 256];
+            
             byte[] colorArray = Darwin.ToArray(bitmap);
+            /*
+            byte[,] histogram = new byte[3, 256];
             byte red = 0;
             byte green = 0;
             byte blue = 0;
@@ -25,19 +27,10 @@ namespace Progra_AA_1.GeneticAlgorithm.Histograms
                 histogram[1, colorArray[e + 1]] += 1;
                 histogram[2, colorArray[e + 2]] += 1;
             }
-            return histogram;
+            */
+            return colorArray;
         }
 
-        public byte[] Normalize(byte[,] matrix)
-        {
-            byte[] array = new byte[matrix.Length / 3];
-
-            for (int i = 0; i < matrix.Length / 3; i++)
-            {
-                array[i] = (byte)((matrix[0, i] + matrix[1, i] + matrix[2, i]) / 3);
-            }
-            return array;
-        }
 
     }
 }

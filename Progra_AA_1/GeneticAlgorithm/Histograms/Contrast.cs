@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Progra_AA_1.GeneticAlgorithm.Histograms
 {
-    class Contrast
+    static class Contrast
     {
-        public byte[] ContrastHistogram(Bitmap bitmap)
+        public static byte[] ContrastHistogram(Bitmap bitmap)
         {
             byte[] histogram = new byte[bitmap.Width * bitmap.Height];
             byte[] result = new byte[256];
@@ -28,13 +28,13 @@ namespace Progra_AA_1.GeneticAlgorithm.Histograms
                     colorArray[2] = color.B;
                     colorArray = InsertionSort(colorArray);
                     histogram[(i + 1) * j] = (byte)Math.Abs(colorArray[2] - (colorArray[1] + colorArray[0]));
-                    result[Math.Abs(colorArray[2] - (colorArray[1] + colorArray[0]))] += 1;
                 }
             }
-            return result;
+            return histogram;
+            
         }
-
-        public byte[] InsertionSort(byte[] arr)
+        
+        public static byte[] InsertionSort(byte[] arr)
         {
             int i, key, j;
             for (i = 1; i < arr.Length; i++)
