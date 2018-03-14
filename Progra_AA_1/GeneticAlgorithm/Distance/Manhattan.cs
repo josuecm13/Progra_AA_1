@@ -17,7 +17,7 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
             return r + g + b;
         }
 
-        public override long GetDistance(Bitmap img, Bitmap selfImg)
+        public override long GetDistance(Bitmap img, Bitmap selfImg, int type)
         {
             if (Type ==0)
             {
