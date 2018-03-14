@@ -30,10 +30,10 @@ namespace Progra_AA_1.GeneticAlgorithm.Histograms
                     histogram[(i + 1) * j] = (byte)Math.Abs(colorArray[2] - (colorArray[1] + colorArray[0]));
                 }
             }
-            return histogram;
-            
+            return histogram;  
         }
-        
+
+
         public static byte[] InsertionSort(byte[] arr)
         {
             int i, key, j;

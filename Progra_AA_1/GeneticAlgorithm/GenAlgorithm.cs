@@ -43,11 +43,11 @@ namespace Progra_AA_1.GeneticAlgorithm
                 Console.WriteLine("GEN:" + (i+1));
                 manager.Evaluate();
                 //manager.Selection();
-                //if((i+1)%4 == 0)
-                //{
-                //    manager.CrossO();
-                //}
-                //else
+                if((i+1)%4 == 0)
+                {
+                   manager.CrossO();
+                }
+                else
                 manager.CrossOver(); //implementar mutacion en el nacimiento.... 
                 manager.Mutate();
                 window.UpdatePicture();
