@@ -10,6 +10,7 @@ namespace Progra_AA_1.GeneticAlgorithm
 {
     class GenAlgorithm 
     {
+
         public Object locker = new Object();
         ImageViewer window;
         public Bitmap destino;

@@ -28,11 +28,11 @@ namespace Progra_AA_1.GeneticAlgorithm.Histograms
                     colorArray[2] = color.B;
                     colorArray = InsertionSort(colorArray);
                     histogram[(i + 1) * j] = (byte)Math.Abs(colorArray[2] - (colorArray[1] + colorArray[0]));
-                    result[Math.Abs(colorArray[2] - (colorArray[1] + colorArray[0]))] += 1;
                 }
             }
-            return result;
+            return histogram;  
         }
+
 
         public static byte[] InsertionSort(byte[] arr)
         {
