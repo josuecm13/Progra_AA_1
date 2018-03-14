@@ -32,24 +32,30 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
         private long GetDistColor(Bitmap img, Bitmap selfImg)
         {
             long output = 0;
-            for (int i = 0; i < img.Width; i++)
+            byte[] histImg = Histograms.ColorHistogram.Histogram(img);
+            byte[] histSelf = Histograms.ColorHistogram.Histogram(selfImg);
+            for (int i = 0; i < histImg.Length; i++)
             {
-                for (int j = 0; j < img.Height; j++)
-                {
-                    Color opxl = img.GetPixel(i, j);
-                    Color spxl = selfImg.GetPixel(i, j);
-                    int r = Math.Abs(opxl.R - spxl.R);
-                    int g = Math.Abs(opxl.G - spxl.G);
-                    int b = Math.Abs(opxl.B - spxl.B);
-                    output += (r + g + b) / 3;
-                }
+                int R = Math.Abs(histImg[i] - histSelf[i]);
+                i++;
+                int G = Math.Abs(histImg[i] - histSelf[i]);
+                i++;
+                int B = Math.Abs(histImg[i] - histSelf[i]);
+                output += (R + G + B)/3; 
             }
             return output;
         }
 
         private long GetHistDist(Bitmap img, Bitmap selfImg)
         {
-            return 0;
+            long output = 0;
+            byte[] histImg = Histograms.Contrast.ContrastHistogram(img);
+            byte[] histSelf = Histograms.Contrast.ContrastHistogram(selfImg);
+            for (int i = 0; i < histImg.Length; i++)
+            {
+                output += Math.Abs(histImg[i] - histSelf[i]);
+            }
+            return output;
         }
 
     }
