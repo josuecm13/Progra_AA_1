@@ -65,10 +65,18 @@ namespace Progra_AA_1.Views.Image_Form
             randomPicBox.Image = Imagen.ResizeImage(ga.manager.population[0].bitmap, 300, 300);
         }
 
-        public void UpdatePicture(int i)
+        private void labelInfo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void UpdatePicture(int i, string info)
         {
             randomPicBox.Image = Imagen.ResizeImage(ga.manager.ten[i].bitmap, 300, 300);
+            
         }
+
+
 
         private void txtbox_console_TextChanged(object sender, EventArgs e)
         {

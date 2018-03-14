@@ -39,6 +39,7 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
             byte[] b1bytes = new byte[bytes];
 
             Marshal.Copy(bitmapData.Scan0, b1bytes, 0, bytes);
+            bitmp.UnlockBits(bitmapData);
 
             return b1bytes;
         }

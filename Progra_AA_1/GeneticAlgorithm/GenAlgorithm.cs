@@ -42,23 +42,14 @@ namespace Progra_AA_1.GeneticAlgorithm
             {
                 Console.WriteLine("GEN:" + (i+1));
                 manager.Evaluate();
-                //manager.Selection();
-                if((i+1)%4 == 0)
-                {
-                   manager.CrossO();
-                }
-                else
                 manager.CrossOver(); //implementar mutacion en el nacimiento.... 
                 manager.Mutate();
                 window.UpdatePicture();
-                //manager.NewGeneration();
                 if ((generations == 0) || (counter == tenpercent) || (i == generations - 1))
                 {
                     lock (locker)
                     {
                         int imgIndex = manager.updateTopTen();
-                        //Console.WriteLine("index:" + imgIndex);
-                        //Console.WriteLine("IMAGEN CAMBIADA");
                         counter = 0;
                     }
                 }
