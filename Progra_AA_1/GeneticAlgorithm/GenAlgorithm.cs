@@ -26,9 +26,9 @@ namespace Progra_AA_1.GeneticAlgorithm
             window = w;
         }
 
-        public GenAlgorithm(int n, Bitmap bitmap, int distanceType, int probCrossOver, int probMutation, int generations, int pMutIndiv, int pSelection, ImageViewer w)
+        public GenAlgorithm(int n, Bitmap bitmap, int distanceType, int probCrossOver, int probMutation, int generations, int pMutIndiv, int pSelection, ImageViewer w, int histOption)
         {
-            manager = new ImageManager(n, bitmap, distanceType, probCrossOver, probMutation, pMutIndiv, pSelection);
+            manager = new ImageManager(n, bitmap, distanceType, probCrossOver, probMutation, pMutIndiv, pSelection, histOption);
             destino = bitmap;
             tenpercent = (int)(generations * 0.1);
             this.generations = generations;

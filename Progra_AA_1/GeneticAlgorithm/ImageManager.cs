@@ -14,6 +14,7 @@ namespace Progra_AA_1.GeneticAlgorithm
         int probCrossOver;
         int probMutation;
         int distanceType;
+        int histOption;
         int pMutIndiv, pSelection;
         Bitmap bitmap;
         public Imagen[] population;
@@ -34,13 +35,14 @@ namespace Progra_AA_1.GeneticAlgorithm
 
         }
 
-        public ImageManager(int n, Bitmap b, int DistanceType, int probCrossOver, int probMutation, int pMutIndiv, int pSelection)
+        public ImageManager(int n, Bitmap b, int DistanceType, int probCrossOver, int probMutation, int pMutIndiv, int pSelection, int histOption)
         {
             this.probCrossOver = probCrossOver;
             this.probMutation = probMutation;
             this.pMutIndiv = pMutIndiv;
             this.pSelection = pSelection;
             this.bitmap = b;
+            this.histOption = histOption;
             distanceType = DistanceType;
             ten = new Imagen[10];
             selection = new Imagen[(int)(n * 0.3 * 0.2)];
@@ -53,7 +55,7 @@ namespace Progra_AA_1.GeneticAlgorithm
             population = new Imagen[n];
             for (int i = 0; i < n; i++)
             {
-                population[i] = new Imagen(DistanceFactory.GetInstance(distanceType),bitmap.Height,bitmap.Width,probMutation,YES);
+                population[i] = new Imagen(DistanceFactory.GetInstance(distanceType),bitmap.Height,bitmap.Width,probMutation,YES, histOption);
             }
         }
 
@@ -110,7 +112,7 @@ namespace Progra_AA_1.GeneticAlgorithm
                 int victim = population.Length - 1;//(int)(rand.Next(population.Length/10) + population.Length*0.8);
                 Bitmap son;
                 son = population[father].Crossing(population[mother].bitmap);
-                Imagen newImg = new Imagen(DistanceFactory.GetInstance(distanceType), bitmap.Height, bitmap.Width, probMutation, NO);
+                Imagen newImg = new Imagen(DistanceFactory.GetInstance(distanceType), bitmap.Height, bitmap.Width, probMutation, NO, histOption);
                 newImg.bitmap = son;
                 newImg.ProcessDistance(bitmap);
                 population[victim] = newImg;
@@ -134,7 +136,7 @@ namespace Progra_AA_1.GeneticAlgorithm
                 }
                 else
                     son = population[father].Crossing(population[mother].bitmap);
-                Imagen newImg = new Imagen(DistanceFactory.GetInstance(distanceType), bitmap.Height, bitmap.Width, probMutation, NO);
+                Imagen newImg = new Imagen(DistanceFactory.GetInstance(distanceType), bitmap.Height, bitmap.Width, probMutation, NO, histOption);
                 newImg.bitmap = son;
                 newImg.ProcessDistance(bitmap);
                 population[victim] = newImg;
@@ -147,7 +149,7 @@ namespace Progra_AA_1.GeneticAlgorithm
             int bye = (int) (population.Length - 2 - (population.Length * 0.05));
             for (int i = population.Length - 1; i > bye; i--)
             {
-                population[i] = new Imagen(DistanceFactory.GetInstance(distanceType), bitmap.Height, bitmap.Width, probMutation, YES);
+                population[i] = new Imagen(DistanceFactory.GetInstance(distanceType), bitmap.Height, bitmap.Width, probMutation, YES, histOption);
             }
         }
 

@@ -46,6 +46,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_selection = new System.Windows.Forms.ComboBox();
+            this.btn_ColorH = new System.Windows.Forms.RadioButton();
+            this.btn_Histo = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_Titulo
@@ -60,7 +64,7 @@
             // btn_Manhattan
             // 
             this.btn_Manhattan.AutoSize = true;
-            this.btn_Manhattan.Location = new System.Drawing.Point(54, 317);
+            this.btn_Manhattan.Location = new System.Drawing.Point(6, 21);
             this.btn_Manhattan.Name = "btn_Manhattan";
             this.btn_Manhattan.Size = new System.Drawing.Size(147, 21);
             this.btn_Manhattan.TabIndex = 1;
@@ -72,7 +76,7 @@
             // btn_Propio
             // 
             this.btn_Propio.AutoSize = true;
-            this.btn_Propio.Location = new System.Drawing.Point(54, 354);
+            this.btn_Propio.Location = new System.Drawing.Point(7, 55);
             this.btn_Propio.Name = "btn_Propio";
             this.btn_Propio.Size = new System.Drawing.Size(170, 21);
             this.btn_Propio.TabIndex = 2;
@@ -627,11 +631,48 @@
             this.txt_selection.TabIndex = 17;
             this.txt_selection.Text = "5";
             // 
+            // btn_ColorH
+            // 
+            this.btn_ColorH.AutoSize = true;
+            this.btn_ColorH.Location = new System.Drawing.Point(243, 314);
+            this.btn_ColorH.Name = "btn_ColorH";
+            this.btn_ColorH.Size = new System.Drawing.Size(158, 21);
+            this.btn_ColorH.TabIndex = 18;
+            this.btn_ColorH.TabStop = true;
+            this.btn_ColorH.Text = "Histograma de Color";
+            this.btn_ColorH.UseVisualStyleBackColor = true;
+            this.btn_ColorH.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged_1);
+            // 
+            // btn_Histo
+            // 
+            this.btn_Histo.AutoSize = true;
+            this.btn_Histo.Location = new System.Drawing.Point(243, 348);
+            this.btn_Histo.Name = "btn_Histo";
+            this.btn_Histo.Size = new System.Drawing.Size(146, 21);
+            this.btn_Histo.TabIndex = 19;
+            this.btn_Histo.TabStop = true;
+            this.btn_Histo.Text = "Histograma Propio";
+            this.btn_Histo.UseVisualStyleBackColor = true;
+            this.btn_Histo.CheckedChanged += new System.EventHandler(this.btn_Histo_CheckedChanged);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btn_Manhattan);
+            this.groupBox1.Controls.Add(this.btn_Propio);
+            this.groupBox1.Location = new System.Drawing.Point(47, 293);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(190, 82);
+            this.groupBox1.TabIndex = 20;
+            this.groupBox1.TabStop = false;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(742, 392);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.btn_Histo);
+            this.Controls.Add(this.btn_ColorH);
             this.Controls.Add(this.txt_selection);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_Genes_a_mutar);
@@ -646,11 +687,11 @@
             this.Controls.Add(this.lbl_Pob);
             this.Controls.Add(this.lbl_cruce);
             this.Controls.Add(this.lbl_mutacion);
-            this.Controls.Add(this.btn_Propio);
-            this.Controls.Add(this.btn_Manhattan);
             this.Controls.Add(this.lbl_Titulo);
             this.Name = "MainMenu";
             this.Text = "Aproximador de Imágenes";
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -676,6 +717,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox txt_selection;
+        private System.Windows.Forms.RadioButton btn_ColorH;
+        private System.Windows.Forms.RadioButton btn_Histo;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

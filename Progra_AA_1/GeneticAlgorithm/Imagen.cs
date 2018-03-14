@@ -20,13 +20,15 @@ namespace Progra_AA_1.GeneticAlgorithm
         int porcMutation;
         public bool Selected = false;
         private bool Mutated = false;
+        int histOption;
 
-        public Imagen(AbsDistance distype, int height, int width, int porcMutation ,int yn)
+        public Imagen(AbsDistance distype, int height, int width, int porcMutation ,int yn, int histOption)
         {
             distance = Int32.MaxValue;
             this.disType = distype;
             h = height;
             w = width;
+            this.histOption = histOption;
             this.porcMutation = porcMutation;
             if(yn != 1)
                 GenerateImage(height, width);
@@ -79,7 +81,7 @@ namespace Progra_AA_1.GeneticAlgorithm
         {
             Bitmap copy = new Bitmap(bitmap);
             if((Mutated) || distance == Int32.MaxValue)
-                distance = disType.GetDistance(original, copy);
+                distance = disType.GetDistance(original, copy, histOption);
             Mutated = false;
             return distance;
         }

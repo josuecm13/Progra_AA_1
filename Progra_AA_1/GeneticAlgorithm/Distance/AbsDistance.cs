@@ -11,7 +11,7 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
     {
         public int Type;
         public Byte[] histogram;
-        public abstract long GetDistance(Bitmap img, Bitmap selfImg);
+        public abstract long GetDistance(Bitmap img, Bitmap selfImg, int type);
         public abstract int BestPixel(Color a, Color b);
     }
 }

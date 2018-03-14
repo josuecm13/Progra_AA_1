@@ -17,6 +17,7 @@ namespace Progra_AA_1
 
         string path;
         int distanceOption;
+        int histOption;
 
         public MainMenu()
         {
@@ -48,7 +49,7 @@ namespace Progra_AA_1
         {
             ImageViewer form = new ImageViewer();
             form.SetDesireImage(path);
-            form.SetComponents(Int32.Parse(txt_population.Text), Int32.Parse(txt_gens.Text), Int32.Parse(txt_prpMut.Text), Int32.Parse(txt_prbCross.Text), distanceOption, int.Parse(txt_Genes_a_mutar.Text), int.Parse(txt_selection.Text),new Bitmap(path));
+            form.SetComponents(Int32.Parse(txt_population.Text), Int32.Parse(txt_gens.Text), Int32.Parse(txt_prpMut.Text), Int32.Parse(txt_prbCross.Text), distanceOption, int.Parse(txt_Genes_a_mutar.Text), int.Parse(txt_selection.Text),new Bitmap(path), histOption);
             form.Show();
             Thread t = new Thread(new ThreadStart(form.Run));
             t.Start();
@@ -94,6 +95,16 @@ namespace Progra_AA_1
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            histOption = 0;
+        }
+
+        private void btn_Histo_CheckedChanged(object sender, EventArgs e)
+        {
+            histOption = 1;
         }
     }
 }

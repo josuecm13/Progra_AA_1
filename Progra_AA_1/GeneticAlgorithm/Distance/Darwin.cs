@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Progra_AA_1.GeneticAlgorithm.Histograms;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -11,12 +12,23 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
 {
     class Darwin : AbsDistance
     {
-        public override long GetDistance(Bitmap img, Bitmap selfImg)
+        public override long GetDistance(Bitmap img, Bitmap selfImg, int type)
         {
-            byte[] pixels1 = ToArray(img);
-            byte[] pixels2 = ToArray(selfImg);
-
-            long result = DarwinDistance(pixels1, pixels2);
+            long result;
+            byte[] pixels1;
+            byte[] pixels2;
+            if (type == 0)
+            {
+                pixels1 = ColorHistogram.Histogram(img);
+                pixels2 = ColorHistogram.Histogram(selfImg);
+                result = DarwinDistance(pixels1, pixels2);
+            } else
+            {
+                pixels1 = Contrast.ContrastHistogram(img);
+                pixels2 = Contrast.ContrastHistogram(selfImg);
+                result = DarwinDistance(pixels1, pixels2);
+                
+            }
             return result;
         }
 
