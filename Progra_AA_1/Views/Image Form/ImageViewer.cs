@@ -60,12 +60,6 @@ namespace Progra_AA_1.Views.Image_Form
             form.Show();
         }
 
-        private void SetRandomImage(Bitmap b)
-        {
-            Imagen img = new Imagen(new Manhattan(),b.Height, b.Width,0,0);
-            randomPicBox.Image = img.bitmap;
-        }
-
         public void UpdatePicture()
         {
             randomPicBox.Image = Imagen.ResizeImage(ga.manager.population[0].bitmap, 300, 300);
