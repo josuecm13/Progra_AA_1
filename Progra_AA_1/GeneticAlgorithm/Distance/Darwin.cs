@@ -49,15 +49,12 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
             int max = 0;
             int maxAux = 0;
 
-            int scale = byte1.Length / 9;
-            int o = 0;
             for (int i = 0; i <= byte1.Length - 1; i++)
             {
                 maxAux = Math.Abs(byte1[i] - byte2[i]);
                 if (maxAux > max)
                 {
                     max = maxAux;
-                    o = i;
                 }
             }
             return max;
