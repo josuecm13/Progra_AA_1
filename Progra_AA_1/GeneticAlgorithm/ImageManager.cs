@@ -123,19 +123,13 @@ namespace Progra_AA_1.GeneticAlgorithm
         public void CrossO()
         {
             Random rand = new Random();
-            int proi = 0;
             for (int i = 0; i < probCrossOver; i++)
             {
                 int father = rand.Next((int)(population.Length));
                 int mother = rand.Next((int)(population.Length));
                 int victim = population.Length - 1;//(int)(rand.Next(population.Length/10) + population.Length*0.8);
                 Bitmap son;
-                if(i%6 == 0)
-                {
-                    son = population[father].Crossin(population[mother].bitmap, bitmap);
-                }
-                else
-                    son = population[father].Crossing(population[mother].bitmap);
+                son = population[father].Crossin(population[mother].bitmap, bitmap);
                 Imagen newImg = new Imagen(DistanceFactory.GetInstance(distanceType), bitmap.Height, bitmap.Width, probMutation, NO, histOption);
                 newImg.bitmap = son;
                 newImg.ProcessDistance(bitmap);

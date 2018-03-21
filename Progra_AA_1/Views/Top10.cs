@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,9 @@ namespace Progra_AA_1.Views
 {
     public partial class Top10 : Form
     {
+
+        Imagen[] top10;
+
         public Top10()
         {
             InitializeComponent();
@@ -21,6 +25,8 @@ namespace Progra_AA_1.Views
 
         public void SetTop10 (object[] top10)
         {
+            this.top10 = (Imagen[])top10;
+
             Imagen img1 = (Imagen)top10[0];
             Imagen img2 = (Imagen)top10[1];
             Imagen img3 = (Imagen)top10[2];
@@ -62,6 +68,24 @@ namespace Progra_AA_1.Views
         private void Top10_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Filter = "Image files (*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap bitmap = new Bitmap(top10[0].w * 10, top10[0].h);
+                using (Graphics g = Graphics.FromImage(bitmap))
+                {
+                    for (int i = 0; i < 10; i++)
+                    {
+                        g.DrawImage(top10[i].bitmap, top10[0].w * i, 0);
+                    }
+                }
+                bitmap.Save(dialog.FileName, ImageFormat.Jpeg);
+            }
         }
     }
 }
