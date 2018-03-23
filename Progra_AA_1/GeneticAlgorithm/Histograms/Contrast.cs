@@ -12,7 +12,6 @@ namespace Progra_AA_1.GeneticAlgorithm.Histograms
         public static byte[] ContrastHistogram(Bitmap bitmap)
         {
             byte[] histogram = new byte[bitmap.Width * bitmap.Height];
-            byte[] result = new byte[256];
 
             Color color;
             byte max = 0;
