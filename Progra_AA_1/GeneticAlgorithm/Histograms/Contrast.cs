@@ -23,7 +23,7 @@ namespace Progra_AA_1.GeneticAlgorithm.Histograms
                 {
                     color = bitmap.GetPixel(i, j);
                     max = Math.Max(Math.Max(color.R, color.G), color.B);
-                    histogram[(i + 1) * j] = (byte)Math.Abs(max - ((color.R + color.B + color.G) - max));
+                    histogram[(i + 1) * j] = (byte) Math.Abs(max - ((color.R + color.B + color.G) - max));
                 }
             }
             return histogram;  

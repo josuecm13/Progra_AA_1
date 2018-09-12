@@ -33,6 +33,7 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
         {
             long output = 0;
             byte[] histImg = Histograms.ColorHistogram.Histogram(img);
+
             byte[] histSelf = Histograms.ColorHistogram.Histogram(selfImg);
             for (int i = 0; i < histImg.Length; i++)
             {
@@ -55,7 +56,9 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
             {
                 output += Math.Abs(histImg[i] - histSelf[i]);
             }
+            
             return output;
+            
         }
 
     }

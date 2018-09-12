@@ -17,16 +17,26 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
             long result;
             byte[] pixels1;
             byte[] pixels2;
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             if (type == 0)
             {
                 pixels1 = ColorHistogram.Histogram(img);
+                watch.Stop();
                 pixels2 = ColorHistogram.Histogram(selfImg);
+                Console.WriteLine("Hpropio: " + watch.ElapsedMilliseconds);
+                watch = System.Diagnostics.Stopwatch.StartNew();
                 result = DarwinDistance(pixels1, pixels2);
+                watch.Stop();
+                Console.WriteLine("Casas" + watch.ElapsedMilliseconds);
             } else
-            {
+            { 
                 pixels1 = Contrast.ContrastHistogram(img);
+                watch.Stop();
                 pixels2 = Contrast.ContrastHistogram(selfImg);
+                Console.WriteLine("Hpropio: " + watch.ElapsedMilliseconds);
+                watch = System.Diagnostics.Stopwatch.StartNew();
                 result = DarwinDistance(pixels1, pixels2);
+                Console.WriteLine("Darwin: " + watch.ElapsedMilliseconds);
                 
             }
             return result;
@@ -72,7 +82,7 @@ namespace Progra_AA_1.GeneticAlgorithm.Distance
                 finalArray[i] = DarwinAux(array1[i], array2[i]);
             }
 
-            int e = finalArray.Sum() / 9;
+            int e = finalArray.Sum();
 
             return e;
         }

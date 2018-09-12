@@ -68,10 +68,7 @@ namespace Progra_AA_1.GeneticAlgorithm
             }
             Array.Sort(population);
             int distance = (int) population[0].distance;
-            int n = population[0].Length;
-            double f_n = distance / (n);
-            f_n = f_n / 255;
-            Console.WriteLine("fitness " + (Math.Round(100 - f_n*100, 2)) + "%");//Console.WriteLine("fitness:" + (100-(population[0].distance/(population[0].Length *255)) * 100) +"%");
+            Console.WriteLine("distance: " + distance);//Console.WriteLine("fitness:" + (100-(population[0].distance/(population[0].Length *255)) * 100) +"%");
         }
 
 

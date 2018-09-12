@@ -14,7 +14,7 @@ namespace Progra_AA_1.GeneticAlgorithm.Histograms
         public static byte[] Histogram(Bitmap bitmap)
         {  
             
-            byte[] histogram = new byte[bitmap.Width * bitmap.Height];
+            byte[] histogram = new byte[bitmap.Width * bitmap.Height * 3];
 
             Color color;
 
